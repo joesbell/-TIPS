@@ -1,0 +1,53 @@
+使用方法
+需要引入的样式和js包括
+<link href="css/jquery.atwho.css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/jquery.caret.js"></script>
+<script src="js/jquery.atwho.js"></script>
+$('#inputor').atwho({
+    at: "@",
+    data:['Peter', 'Tom', 'Anne']
+})
+
+
+1.可以监听任何字符，不仅仅只是’@‘，可以设置监听不同的字符和使用不同的数据。 
+
+2.支持同时使用静态数据和动态数据（通过AJAX），静态数据会被优先使用，然后再用AJAX加载找不到的值。 
+
+3.可以给多个文本框设置监听事件。 
+
+4.内置缓存支持。
+
+5.可以使用模板设置数据的显示格式。 
+
+6.鼠标/键盘控制：Tab或Enter键选择，Up和Down键上下导航。 
+
+7.支持输入搜索。
+
+默认的参数：
+
+$.fn.atwho["default"] = {
+  at: void 0,
+  alias: void 0,
+  data: null,
+  displayTpl: "<li>${name}</li>",//显示模板
+  insertTpl: "${atwho-at}${name}",//插入模板
+  headerTpl: null,
+  callbacks: DEFAULT_CALLBACKS,
+  searchKey: "name",
+  suffix: void 0,
+  hideWithoutSuffix: false,
+  startWithSpace: true,//是否已空格开始
+  highlightFirst: true,
+  limit: 5,//默认只显示5条
+  maxLen: 20,
+  minLen: 0,
+  displayTimeout: 300,
+  delay: null,
+  spaceSelectsMatch: false,
+  tabSelectsMatch: true,
+  editableAtwhoQueryAttrs: {},
+  scrollDuration: 150,
+  suspendOnComposing: true,
+  lookUpOnClick: true
+};
